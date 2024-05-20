@@ -14,6 +14,8 @@ RUN pip install -r requirements.txt
 COPY src .
 COPY setup.py .
 
+RUN pip install -e .
+
 # We should add here a train, inference or test command (or pass what
 # we want to do as an argument to the docker run command)
 CMD ["/bin/bash"]
