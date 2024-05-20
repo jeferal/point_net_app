@@ -10,9 +10,10 @@ COPY requirements.txt .
 # Install any dependencies
 RUN pip install -r requirements.txt
 
-# Clone the repository
-RUN git clone https://github.com/itberrios/3D.git
+# Copy src
+COPY src .
+COPY setup.py .
 
 # We should add here a train, inference or test command (or pass what
 # we want to do as an argument to the docker run command)
-CMD ["python3", "./3D/point_net/point_net.py"]
+CMD ["/bin/bash"]
